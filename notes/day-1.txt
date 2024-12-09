@@ -107,6 +107,49 @@ package.json => JSON file with config and dependencies (at the root of app direc
 	>npm init or >npm init --yes
 
 
+ECMA
+	ECMAScript (ES)
+		ES 2.0/3.0/5.0 (2011)
+
+		New versions: (ES6+/ESNext)
+		ES 6.0 (2015)
+		...
+		ES 15.0 (2024)
+
+TS => JS
+backward compatibility
+
+package.json script running:
+npm run <script-name>
+npm tool will look into ./node_modules/.bin folder for any executable
+
+tsconfig.json => 
+create using >.\node_modules\.bin\tsc --init
+
+
+developer: 
+data: name, id, basic, da, hra, incentive
+function: calculateSalary():number
+
+hr: 
+data: name, id, basic, da, hra, gratuity
+function: calculateSalary():number
+
+create objects of developer and hr
+save them into an array
+iterate through the array and print the total salary of all employees
+
+
+
+
+
+
+
+
+
+
+	
+
 
 
 

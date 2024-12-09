@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "simple ts app",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "build:w": "tsc --watch",
+    "app": "node ./dist/index.js"
+  },
   "author": "joydip",
   "license": "ISC",
   "devDependencies": {
