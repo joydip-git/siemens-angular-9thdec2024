@@ -71,11 +71,42 @@ DOESN'T allow you to use strict typing => no data typification => loosely-typed 
 JS offers no static type checking, everything is checked during runtime => dynamic language
 
 
-if(a!==b)
+strict equality and inequality
 
 JS compilation:
 1. preparation
 2. execution
+
+TypeScript => 
+a. strict typing
+b. static type checking
+
+TS => JS [transpilation]
+tool => TypeScript Compiler (TSC)
+
+local installation:
+command: >npm install/i <package-name> -D [--save-dev] (development dependency)
+command: >npm install/i <package-name> [--save] (complete dependency)
+path: app directory
+source code: node_modules
+executable script files: inside .bin folder of node_modules
+
+
+global installation:
+command: >npm install/i <package-name> --location=global
+path: C:\Users\<user-name>\AppData\Roaming\npm
+source code: node_modules
+executable script files: outside node_modules (in the npm directory)
+
+package managers:
+npm, yarn, bower,...
+
+package.json => JSON file with config and dependencies (at the root of app directory)
+1. manual
+2. npm tool command
+	>npm init or >npm init --yes
+
+
 
 
 
