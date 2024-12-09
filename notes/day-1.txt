@@ -71,8 +71,11 @@ DOESN'T allow you to use strict typing => no data typification => loosely-typed 
 JS offers no static type checking, everything is checked during runtime => dynamic language
 
 
+if(a!==b)
 
-
+JS compilation:
+1. preparation
+2. execution
 
 
 
