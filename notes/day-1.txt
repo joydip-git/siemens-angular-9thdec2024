@@ -42,11 +42,37 @@ JS engine
 JS engine:
 ----------------------
 chrome => V8
+safari => JavaScript Core (Indigo)
+firefox => spidermonkey
+opera => chromekit browser
+egde => chakra (later V8)
 
-Node JS => C++ app integrated with V8 engine  (Ryan Dahl - 2009)
+Node JS => 
+	C++ app integrated with V8 engine  (Ryan Dahl - 2009)
+	JS runtime with lots of built-in methods in different modules
+
 2009 => Angular JS
 2011 => React JS (GrapahQL)
 2013 => Vue JS
+
+JavaScript:
+----------------------------
+1. data types
+	=> string, number, boolean, object
+	=> undefined, NaN, Infinity, null, var
+2. operators
+3. control flow statements
+
+JS Features:
+-------------------
+DOESN'T allow you to use strict typing => no data typification => loosely-typed language
+"var" keyword helps you declare a loosely-typed variable
+
+JS offers no static type checking, everything is checked during runtime => dynamic language
+
+
+
+
 
 
 
