@@ -1,0 +1,64 @@
+https://github.com/joydip-git/siemens-angular-9thdec2024
+
+Learning curve:
+-------------------------
+JavaScript
+TypeScript
+Node JS
+
+Angular
+
+S/w:
+-----------------
+node js
+vs code
+
+Angular: 
+------------------
+web app technology/framework
+client-side SPA (single page application)
+
+production web server:
+-----------------
+Internet Information Service (IIS) - windows
+tomcat(apache)
+nginx
+vercel
+etc.
+
+
+app development web server:
+------------------------------------
+a web server which will host your application in the dev machine
+live server
+lite server etc.
+
+
+how browser understands JS and HTML?
+------------------------------------
+html parser
+JS engine
+
+JS engine:
+----------------------
+chrome => V8
+
+Node JS => C++ app integrated with V8 engine  (Ryan Dahl - 2009)
+2009 => Angular JS
+2011 => React JS (GrapahQL)
+2013 => Vue JS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
