@@ -109,7 +109,28 @@ Callback
 asynchronity
 RxJS
 
+Angular:
+-----------------------
 
+
+dash-board.html		+	dash-board.ts		=> <app-dash-board>
+----------------------------------------------
+<nav>				event handler code
+	<app-item-card>		message=''
+	.....
+</nav>
+
+item-card.html + item-card.ts				=> <app-item-card>
+--------------------
+<div>
+	<div>
+		<img src="".../>
+	</div>
+</div>
+
+
+service
+	=> re-usable piece of logic (fetching data etc.)
 
 
 
