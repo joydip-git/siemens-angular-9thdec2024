@@ -132,6 +132,61 @@ item-card.html + item-card.ts				=> <app-item-card>
 service
 	=> re-usable piece of logic (fetching data etc.)
 
+tool to create angular application and set up => Angular CLI (ng)
+
+install Angular CLI
+>npm i @angular/cli --location=global
+
+create new angular application:
+>ng new <app-name> --standalone=false [using angular module]
+>ng new <app-name>  [not using angular module]
+
+
+Angular "things":
+------------------------
+     TYPE			CLASS		    DECORATOR (@angular/core)
+--------------------------------------------------------------------------
+1. Component		-> class XComponent{}	-> @Component({}) => with design
+2. Directive		-> class XDirective{}	-> @Directive({})
+3. Pipe			-> class XPipe{}	-> @Pipe({})
+4. Service		-> class XService{}	-> @Injectable({})
+5. Module		-> class XModule{}	-> @NgModule({})
+
+Binding:
+--------------------
+1. data binding => (code -> view/template)
+a. interpolation: {{data}}
+b. proprty binding: <element [attr]="data">
+
+
+2. event binding: => (code <-- view/template)
+<element (event-name)="method(data)">
+
+
+property		elements		
+-----------------------------------
+welcomeMessage		h2, input[type=text]
+
+change detection => auto change detection
+
+#inputMessage  => template reference variable
+
+const inputMessage = document.querySelector('input[type=text]')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

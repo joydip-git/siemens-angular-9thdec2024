@@ -1,0 +1,14 @@
+<h2>{{welcomeMessage}}</h2>
+<br>
+<div>
+    <label for="txtMessage">Message</label>
+    <!-- <input #inputMessage type="text" id="txtMessage" value="{{welcomeMessage}}" [style.width.px]="width"
+        (input)="updateWelcomeMessage(inputMessage.value)"> -->
+    <input #inputMessage type="text" id="txtMessage" value="{{welcomeMessage}}" [style.width.px]="width"
+        (input)="updateWelcomeMessage($event)">
+    <!-- <input #inputMessage type="text" id="txtMessage" value="{{welcomeMessage}}" [style.width.px]="width">
+    <br>
+    <button type="button" (click)="updateWelcomeMessage(inputMessage.value)">Update Message</button>
+    <br>
+    <button type="button" (click)="clicked($event)">Clicke Me!!!</button> -->
+</div>

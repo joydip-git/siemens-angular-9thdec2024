@@ -1,0 +1,8 @@
+h2 {
+    background-color: burlywood;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid burlywood;
+    border-radius: 5px;
+    text-align: center;
+}
