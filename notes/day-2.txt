@@ -1,0 +1,116 @@
+JavaScript:
+--------------------
+data types
+control flow statements
+operators
+array
+how to declare variables
+how to create function => 
+a. declaration : function func_name(){}
+b. expression: var/let/const func_name = function(){}
+
+TypeScript:
+-------------------
+development mode language
+can't execute directly in any environment (browser, node js etc.)
+
+a. strict typing
+b. static type checking
+
+Transpilation:
+------------------------
+a. backward compatibility -> ES6+ => Vanilla JS
+b. other scripting language -> JS
+
+Transpilers:
+---------------------
+ES6+ version of JS -> Vanilla JS [babel]
+ES6+ version of TS -> Vanilla JS [tsc (typescript compiler)]
+
+configuration:
+-----------------
+package.json (>npm init [--yes])
+
+installation of package:
+----------------------
+a. local (>npm i <package-name> [-D])
+b. global (>npm i <package-name> --location=global)
+
+TS configuration:
+-----------------------
+tsconfig.json (>tsc --init or >.\node_modules\.bin\tsc --init)
+
+ES6+ features:
+-----------------------
+a. let and const keywords
+b. template string (`${data}`)
+c. arrow function (const func_name=(arg1, args2,...)=>{})
+d. class, constructor, extends, super
+e. ES6 module format
+
+
+Modules:
+--------------------
+An API for exposing a file's members to outside of the file
+
+Module format:
+------------------------
+
+a. IIFE (Immediately Invocable Function Expression - iify)
+----------------------------------------------------------
+
+(
+	function(){
+		var add = (a,b)=>a+b
+	}
+)();
+
+b. Common JS
+---------------------------
+export member =>
+
+utility.js
+var add = (a,b)=>a+b
+
+module.exports = {add}
+or
+module.exports = add
+
+import member =>
+index.js
+
+const { add } = require('./utility')
+
+c. AMD (Asynchronous module definition) format
+------------------------------------------------
+define( function(){ var add = (a,b)=>a+b} )
+
+d. UMD (Universal module definition) format
+------------------------------------------------
+require( function(){ var add = (a,b)=>a+b} )
+
+e. ES6 module format:
+-------------------------
+export member ->
+export const add = (a,b)=>a+b
+
+import member ->
+import { member } from './'
+
+
+
+Module loader:
+---------------------
+require js
+system js
+
+
+Callback
+asynchronity
+RxJS
+
+
+
+
+
+
