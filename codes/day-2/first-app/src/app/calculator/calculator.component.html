@@ -1,0 +1,46 @@
+<fieldset>
+    <legend>Calculator</legend>
+    <div>
+        <label for="radioAdd">Add</label>
+        &nbsp;&nbsp;
+        <input type="radio" name="radios" id="radioAdd" (change)="updateChoice(1)">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="radioSub">Subtract</label>
+        &nbsp;&nbsp;
+        <input type="radio" name="radios" id="radioSub" (change)="updateChoice(2)">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="radioMulti">Multiply</label>
+        &nbsp;&nbsp;
+        <input type="radio" name="radios" id="radioMulti" (change)="updateChoice(3)">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="radioDiv">Divide</label>
+        &nbsp;&nbsp;
+        <input type="radio" name="radios" id="radioDiv" (change)="updateChoice(4)">
+    </div>
+    <br>
+    <div>
+        <label for="txtFirst">
+            First:&nbsp;
+        </label>
+        <input type="text" id="txtFirst" [value]="firstValue" #firstInput (input)="updateFirstValue(+firstInput.value)">
+    </div>
+    <br>
+    <div>
+        <label for="txtSecond">
+            Second:&nbsp;
+        </label>
+        <input type="text" id="txtSecond" [value]="secondValue" #secondInput
+            (input)="updateSecondValue(+secondInput.value)">
+    </div>
+    <br>
+    <div>
+        <button type="button" (click)="calculate()">Calculate</button>
+    </div>
+    <br>
+    <div>
+        <label for="txtResult">
+            Result:&nbsp;
+        </label>
+        <input type="text" id="txtResult" readonly [value]="resultValue">
+    </div>
+</fieldset>
