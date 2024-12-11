@@ -1,0 +1,62 @@
+1. create new angular application
+ng new pms-app --standalone=false
+
+2. create a model => Product (interface/class)
+
+3. create a file containing an array (of type Product[]) with that sample data
+
+4. you need to create a component to display those products through <table> element 
+	name: ProductListComponent
+
+5. create a service, which provides you with an operation to return that array of products
+	a. interface (contract) for the service
+	b. create a service class by implementing that interface
+		name: ProductService
+	c. register the service (with custom provider)
+note: the service will be used by many assets of a feature module
+
+6. create a feature module for product
+	name: ProductsModule
+	a. register service provider fpr ProductService
+	b. register the component (ProductListComponent)
+
+7. register the ProductsModule with AppModule
+
+app structure:
+
+
+app: (folder)
+	app.module.ts
+	app.component.html
+	app.component.css
+	app.component.ts
+	app.component.spec.ts
+
+	models: (folder)
+		product.ts (Product type)
+
+	data: (folder)
+		products.ts (containing the array of products)
+
+	utils: (folder)
+		constants.ts (containing const variable for token, service class, API url etc.)
+
+	products: (folder)
+		products.module.ts (ProductsModule)
+
+		components: (folder)
+			product-list (component folder)
+				product-list.component.html
+				product-list.component.css
+				product-list.component.ts
+				product-list.component.spec.ts
+
+		services: (folder)
+			product.service.ts (ProductService)
+
+
+
+
+
+
+
