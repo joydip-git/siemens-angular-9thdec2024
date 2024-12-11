@@ -136,6 +136,27 @@ but if a service class needs DI of another service, that service class must be d
 best practice: use @Injectable() at the top of the service, no matter whether the service itself requires DI or not, for the sake uniformity.
 
 
+@Pipe({ name: 'uppercase' })
+export class UpperCasePipe implements PipeTransform{
+	transform(value:any,...args:any[]){
+		return value.toLocaleUpperCase();
+	}
+}
+@NgModule({
+	declarations:[NgForDirective,NgIfDirective, UpperCasePipe,LowerCasePipe,CurrencyPipe]
+})
+export class CommonModule{
+}
+
+{{p.productName|uppercase}}
+
+=> const pipe = new UpperCasePipe()
+   pipe.transform(p.productName)
+
+{{p.price|currency:'INR'}}
+=> const pipe = new CurrencyPipe()
+   pipe.transform(p.productName)
+
 
 
 
