@@ -7,17 +7,24 @@ ng new pms-app --standalone=false
 
 4. you need to create a component to display those products through <table> element 
 	name: ProductListComponent
+	data to display: 
+	image		name		price		rating		delete
+--------------------------------------------------------------------------------
+	<image>		<name>		<price>		<rating>	button
 
 5. create a service, which provides you with an operation to return that array of products
-	a. interface (contract) for the service
+	a. interface (contract) for the service 
+		name: IPmsAppService<T>
+
 	b. create a service class by implementing that interface
 		name: ProductService
+
 	c. register the service (with custom provider)
-note: the service will be used by many assets of a feature module
+note: the service will be used by many assets from a feature module [ProductsModule]
 
 6. create a feature module for product
 	name: ProductsModule
-	a. register service provider fpr ProductService
+	a. register service provider for ProductService
 	b. register the component (ProductListComponent)
 
 7. register the ProductsModule with AppModule
@@ -27,13 +34,18 @@ app structure:
 
 app: (folder)
 	app.module.ts
+	[app-routing.module.ts]
+
 	app.component.html
 	app.component.css
 	app.component.ts
 	app.component.spec.ts
 
 	models: (folder)
-		product.ts (Product type)
+		product.ts (Product class/interface)
+
+	contracts:(folder)
+		pmsappservicecontract.ts (IPmsAppService<T> interface)
 
 	data: (folder)
 		products.ts (containing the array of products)
@@ -45,7 +57,7 @@ app: (folder)
 		products.module.ts (ProductsModule)
 
 		components: (folder)
-			product-list (component folder)
+			product-list: (component folder) => ProductListComponent
 				product-list.component.html
 				product-list.component.css
 				product-list.component.ts
