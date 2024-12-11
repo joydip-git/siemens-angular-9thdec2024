@@ -1,0 +1,141 @@
+If you have ONLY AppModule (root module), then no need to import CommonModule, since BrowserModule is registered with root module, which brings CommnModule automatically. 
+
+But, if you create any other feature module for your application, then in that feature module, you have to import CommonModule, since the feature does not import BrowserModule, in order to use structural directives.
+
+export class AppComponent{
+	names=['anil','sunil']
+}
+
+<ul *ngIf="names.length>0">
+  <li *ngFor="let name of names">
+	{{name}}
+  </li>
+</ul>
+
+@NgModule({
+	declarations:[AppComponent],
+	imports:[
+		//CommonModule
+		BrowserModule
+	]
+})
+export class AppModule{
+
+}
+
+
+if(names.length>0){
+const ulElement = document.createElement('ul')
+  for(let name of names){
+	const liElement = document.createElement('li')
+	liElement.innerText=name
+	ulElement.appendChild(liElement)
+  }
+}
+
+directives: used like an attribute in majority cases
+a. structural directive: 
+	used like an atrribute of any element, which manipulates DOM
+	eg. *ngIf, *ngIfElse, *ngFor, *ngSwitch
+
+b. attribute directive:
+	used like an atrribute of any element, which DOESN'T manipulate DOM. It extends behavior of any existing element
+	eg. ngModel, ngForm, formControl, formGroup, routerLink etc.
+
+c. component directive (component):
+	used like a custom HTML tag
+
+@Directive({
+	selector:'[ngFor]'
+})
+export class NgForDirective{
+	method(expression:string, template:any){
+		//code
+	}
+}
+
+@NgModule({
+	delarations:[NgForDirective],
+	exports:[NgForDirective]
+})
+export class CommonModule{
+}
+
+@NgModule({
+	imports:[CommonModule],
+	exports:[CommonModule]
+})
+export class BrowserModule{
+}
+
+const ngForObject = new NgForDirective()
+ngForObject.method("",li)
+
+@NgModule({
+	//register components, directives, pipes
+	declarations:[],
+
+	//register services
+	providers:[],
+
+	//register built-in and/or app feature modules
+	imports:[],
+
+	//bootstrapper components
+	bootstrap:[],
+
+	//export registered members outside this module
+	exports:[]
+})
+
+app
+	app.module.ts
+
+	app.component.html
+	app.component.css
+	app.component.ts
+
+	other
+		other.module.ts	
+		
+		components
+
+			people-list
+				people-list.component.html
+				people-list.component.css
+				people-list.component.ts
+
+		pipes
+			
+
+		services
+
+		directives
+
+
+services:
+1. create service
+2. register service with token with angular (create a service provider for your service) 
+	where to register? [consumer???]
+	a. an asset [asset level "providers" property]
+	b. multiple assets from a feature module [fetaure module level "providers" property]
+	c. multiple assets across application [root module level "providers" property]
+
+	how to regsiter??
+	a. use the class name as token and simple mention the name of the class in "providers" property
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+<h2>List of Names</h2>
+<ul *ngIf="people.length>0">
+    <li *ngFor="let p of people">
+        {{p.name}} => {{p.salary}}
+    </li>
+</ul>
