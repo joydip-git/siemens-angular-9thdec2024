@@ -16,6 +16,8 @@ export class PeopleListComponent {
 
   private ps: ServiceContract;
 
+  //constructor(ps: PeopleService)
+  // constructor(@Inject(TOKEN_NAME) ps: PeopleService)
   constructor(@Inject(TOKEN_NAME) ps: ServiceContract) {
     this.ps = ps
     //const ps = new PeopleService()

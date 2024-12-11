@@ -1,7 +1,14 @@
+import { Injectable } from "@angular/core";
 import { Person } from "../../models/person";
 import { ServiceContract } from "../../models/servicecontract";
+import { AnotherService } from "./another.service";
 
+@Injectable()
 export class PeopleService implements ServiceContract {
+
+    constructor(private another: AnotherService) {
+
+    }
     private peopleRecords: Person[] = [
         {
             id: 1,
@@ -17,5 +24,8 @@ export class PeopleService implements ServiceContract {
 
     getAll() {
         return this.peopleRecords
+    }
+    getAppTitle(): string {
+        return this.another.getTitle()
     }
 }

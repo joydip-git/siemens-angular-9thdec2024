@@ -123,6 +123,23 @@ services:
 
 	how to regsiter??
 	a. use the class name as token and simple mention the name of the class in "providers" property
+
+3. comsume the service
+   constructor injecttion
+
+any asset in Angular, who needs DI of  service, MUST be declared with @Injectable()
+
+@Component(), @Directive(), @Pipe(), @NgModule() decoartors automatically brings/applies @Injectable() on component, directive, pipe and module classes
+
+but if a service class needs DI of another service, that service class must be decoarated with @Injectable(), since generally at the top of any service class, we do not use any decoartor.
+
+best practice: use @Injectable() at the top of the service, no matter whether the service itself requires DI or not, for the sake uniformity.
+
+
+
+
+
+
 	
 
 
