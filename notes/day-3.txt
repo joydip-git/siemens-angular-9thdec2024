@@ -153,9 +153,9 @@ export class CommonModule{
 => const pipe = new UpperCasePipe()
    pipe.transform(p.productName)
 
-{{p.price|currency:'INR'}}
+{{p.price|currency:'INR':'0-2':}}
 => const pipe = new CurrencyPipe()
-   pipe.transform(p.productName)
+   pipe.transform(p.price,'INR','0-2')
 
 
 
