@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SERVICE_TYPE, TOKEN_NAME } from '../utils/constants';
 import { FilterProductPipe } from './pipes/filter-product.pipe';
+import { SortProductPipe } from './pipes/sort-product.pipe';
 
 @NgModule({
   declarations: [
     ProductListComponent,
-    FilterProductPipe
+    FilterProductPipe,
+    SortProductPipe
   ],
   imports: [
     CommonModule

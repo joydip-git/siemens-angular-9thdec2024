@@ -11,11 +11,16 @@ import { PmsAppServiceContract } from '../../../contracts/pmsappservicecontract'
 export class ProductListComponent {
   products: Product[];
   filterText = ''
+  sortChoices = ['id', 'name', 'price', 'rating']
+  choice = ''
 
   constructor(@Inject(TOKEN_NAME) private ps: PmsAppServiceContract<Product>) {
     this.products = this.ps.getAll()
   }
   updateFilterText(text: string) {
     this.filterText = text
+  }
+  updateChoice(text: string) {
+    this.choice = text
   }
 }

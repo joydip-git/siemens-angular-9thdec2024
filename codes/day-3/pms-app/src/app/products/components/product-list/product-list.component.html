@@ -2,9 +2,21 @@
     <h2>List of Products</h2>
     <br>
     <div>
-        <label for="txtSearch">Filter By: &nbsp;</label>
-        <input type="text" id="txtSearch" #inputFilter [value]="filterText"
-            (input)="updateFilterText(inputFilter.value)">
+        <div style="float: left;">
+            <label for="txtSearch">Filter By: &nbsp;</label>
+            <input type="text" id="txtSearch" #inputFilter [value]="filterText"
+                (input)="updateFilterText(inputFilter.value)">
+        </div>
+        <div style="float: right;">
+            <label for="ddlSort">Sort By: &nbsp;</label>
+            <select id="ddlSort" (change)="updateChoice(inputChoice.options[inputChoice.selectedIndex].value)"
+                #inputChoice>
+                <option selected disabled>--select--</option>
+                <option *ngFor="let item of sortChoices">
+                    {{item}}
+                </option>
+            </select>
+        </div>
     </div>
     <br>
     <table class="table table-hover" *ngIf="products.length>0">
@@ -18,7 +30,7 @@
             </tr>
         </thead>
         <tbody class="table-dark">
-            <tr *ngFor="let p of (products|filterproduct:filterText)">
+            <tr *ngFor="let p of products|sortProduct:choice|filterproduct:filterText">
                 <td>
                     <img class="image-style" [src]="p.imageUrl" alt="NA" [title]="p.productName">
                 </td>
