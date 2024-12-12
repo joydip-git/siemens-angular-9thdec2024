@@ -1,0 +1,8 @@
+<div>
+    Nested Component: &nbsp;{{welcomeMessage}}
+    <div>
+        <label for="txtTitle">Title: &nbsp;</label>
+        <input type="text" [value]="titleValue" id="txtTitle" (input)="triggerTitleChange(inputTitle.value)"
+            #inputTitle>
+    </div>
+</div>

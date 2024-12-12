@@ -68,6 +68,103 @@ app: (folder)
 
 
 
+Enhancement 1:
+-----------------------------
+Introduction of pipes:
+8.a. create two pipes (FilterProduct and SortProduct)
+	a. FilterProduct pipe: in order to filter the products as diplayed in the table, by product name (complete or partial)
+	b. SortProduct pipe: in order to sort the products as diplayed in the table, by 
+		- product name
+		- product id
+		- product price
+		- product rating
+
+8.b. Register both the pipes with ProductsModule
+8.c. use both of them in product-list component template to sort and filter the products
+
+Enhancement 2:
+-----------------------
+Introduction of Nested components with passing data between them [parent->child and child->parent]:
+
+9.a. create two separate component for 
+	- sort product design and 
+	- filter product design
+along with their code, as they both are created as part of the product-list component design, as of now.
+
+class names: ProductFilterComponent and ProductSortComponent
+
+9.b. Create a new component -> ProductContainer which will be the parent of two new components as well as product list component
+
+9.c. Nest both the ProductFilterComponent and ProductSortComponent along with ProductListComponent inside ProductContainer.
+
+ProductFilterComponent should pass the filter text (as entered into the text box) to its parent component => ProductContainer and the ProductContainer component should pass the filter text to its child component ProductListComponent
+
+ProductSortComponent should pass the sorting choice (as selected from the drop-down list) to its parent component => ProductContainer and the ProductContainer component should pass the sorting choice to its child component ProductListComponent
+
+
+structure of the application:
+
+	app: (folder)
+		app.module.ts [class->AppModule]
+		[app-routing.module.ts]
+
+		app.component.html
+		app.component.css
+		app.component.ts
+		app.component.spec.ts
+
+	models: (folder)
+		product.ts [interface->Product]
+
+	contracts:(folder)
+		pmsappservicecontract.ts [interface->PmsAppService<T>]
+
+	data: (folder)
+		products.ts (containing the array of products)
+
+	utils: (folder)
+		constants.ts (containing const variable for token, service class, API url etc.)
+
+	products: (folder)
+		products.module.ts [class->ProductsModule]
+
+		components: (folder)
+
+		  	product-filter (folder)
+				product-filter.component.html
+				product-filter.component.css
+				product-filter.component.ts [class->ProductFilterComponent]
+				product-filter.component.spec.ts
+
+		  	product-sort (folder)
+				product-sort.component.html
+				product-sort.component.css
+				product-sort.component.ts [class->ProductSortComponent]
+				product-sort.component.spec.ts
+
+		  	product-container (folder)
+				product-container.component.html
+				product-container.component.css
+				product-container.component.ts [class->ProductContainerComponent]
+				product-container.component.spec.ts
+
+			product-list: (component folder)
+				product-list.component.html
+				product-list.component.css
+				product-list.component.ts [class->ProductListComponent]
+				product-list.component.spec.ts
+
+	pipes: (folder)
+		filter-product.pipe.ts [class->FilterProductPipe]
+		filter-product.pipe.spec.ts
+
+		sort-product.pipe.ts [class->SortProductPipe]
+		sort-product.pipe.spec.ts
+
+	services: (folder)
+		product.service.ts [class->ProductService]
+		product.service.spec.ts 
+
 
 
 

@@ -1,0 +1,71 @@
+pipe
+---------------------
+	transformer, which transforms value before getting displayed in the template
+	a. create pipe
+		i. create a class and implement PipeTransform interface	ii. decorate the class with @Pipe and provide it with a name
+		iii. write logic in "transform()" method and must return a value
+	b. register pipe (in "declarations" property of module)
+	c. use it declaratively in template of a component
+
+	{{data|pipe-name:extra-arg1:extra-arg2:......}}
+
+service:
+---------------------
+@Injectable({ providedIn:'root'}) => the service will be registered at the root module. in this case you don't need to register a provider separately in the module file (providers array)
+
+passing data between components:
+------------------------------------------
+a. nested component
+	i. shallow nesting
+		A. parent to nested
+		B. Nested to parent
+	ii. deep nesting
+b. routed components
+
+<input type='text' [value]="data" (input)="method-of-comp()">
+
+app.component.ts
+data="siemens"
+
+app.component.html:
+<div>
+<app-sample [dataValue]="data" (event-name)="method-of-appcompocode()"></app-sample>
+</div>
+
+a property in a component code is public to its own template, can't be accessed from another component's template
+
+@Input() => Decorator that marks a class field as an input property and supplies configuration metadata. The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
+
+EventEmitter => Use in components with the @Output directive to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance.
+
+
+component's lifecycle:
+---------------------------------
+a. creation
+	i. all properties are initialized
+	ii. constructor called
+	iii. receives input data from parent (if any) => Changes event gets fired
+		[ compute welcomeMessage from titleValue ]
+	iv. Init event gets fired [gets fired ONLY ONCE till the component gets destroyed]
+
+b. updation:
+	i. receives input data from parent (if any) => Change event gets fired [changes event gets fired everytime the input data from parent gets updated]
+
+c. destruction:
+	i. destroy event gets fired
+
+
+	event		interface	method
+----------------------------------------------------------
+	X		OnX		ngOnX
+
+	changes		OnChanges	ngOnChanges
+	init		OnInit		ngOnInit
+	destroy		OnDestroy	ngOnDestroy
+
+
+
+
+
+
+
