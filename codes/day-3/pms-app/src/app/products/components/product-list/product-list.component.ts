@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { Product } from '../../../models/product';
 import { TOKEN_NAME } from '../../../utils/constants';
 import { PmsAppServiceContract } from '../../../contracts/pmsappservicecontract';
@@ -10,17 +10,10 @@ import { PmsAppServiceContract } from '../../../contracts/pmsappservicecontract'
 })
 export class ProductListComponent {
   products: Product[];
-  filterText = ''
-  sortChoices = ['id', 'name', 'price', 'rating']
-  choice = ''
+  @Input() filterText = ''
+  @Input() sortChoice = ''
 
   constructor(@Inject(TOKEN_NAME) private ps: PmsAppServiceContract<Product>) {
     this.products = this.ps.getAll()
-  }
-  updateFilterText(text: string) {
-    this.filterText = text
-  }
-  updateChoice(text: string) {
-    this.choice = text
   }
 }

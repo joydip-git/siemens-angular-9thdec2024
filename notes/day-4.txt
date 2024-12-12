@@ -63,6 +63,26 @@ c. destruction:
 	init		OnInit		ngOnInit
 	destroy		OnDestroy	ngOnDestroy
 
+HTTP Requests:
+---------------------------
+built-in service class: HttpClient
+
+service provider for HttpClient class => 
+import the module in imports array in NgModule: HttpClientModule (deprecated)
+call the function in imports array in NgModule: provideHttpClient()
+
+HttpClient => get(), post(), put(), delete() etc.
+
+all methods return => Observable object
+
+Subjects=>
+	Subject
+	BehaviorSubject
+	RelaySubject
+
+
+https://jsonplaceholder.typicode.com/todos
+
 
 
 
