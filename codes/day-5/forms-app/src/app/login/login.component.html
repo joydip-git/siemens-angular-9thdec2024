@@ -1,0 +1,28 @@
+<form ngForm #frm="ngForm" (submit)="submit(frm)">
+    <div>
+        <label for="txtUser">UserName:&nbsp;</label>
+        <!-- <input type="text" id="txtUser" name="userName" [(ngModel)]="user.userName"> -->
+        <input type="text" id="txtUser" name="userName" ngModel required email #inputUsername="ngModel">
+    </div>
+    <div *ngIf="inputUsername.control.dirty || inputUsername.control.touched">
+        <div *ngIf="inputUsername.control.errors?.['required']">
+            enter user name please
+        </div>
+        <div *ngIf="inputUsername.control.errors?.['email']">
+            enter user name in email format
+        </div>
+    </div>
+    <div>
+        <label for="txtPass">Password:&nbsp;</label>
+        <!-- <input type="password" id="txtPass" name="password" [(ngModel)]="user.password"> -->
+        <input type="password" id="txtPass" name="password" ngModel required #inputPassword="ngModel">
+    </div>
+    <div *ngIf="inputPassword.control.dirty || inputPassword.control.touched">
+        <div *ngIf="inputPassword.control.errors?.['required']">
+            enter password please
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Login" [disabled]="frm.invalid">
+    </div>
+</form>

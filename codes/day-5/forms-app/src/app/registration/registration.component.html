@@ -1,0 +1,35 @@
+<form [formGroup]="regForm" (submit)="submit()">
+    <div>
+        <label for="txtUser">UserName:&nbsp;</label>
+        <!-- <input type="text" id="txtUser" [formControl]="userName"> -->
+        <input type="text" id="txtUser" formControlName="userName">
+    </div>
+    <div *ngIf="userName?.dirty || userName?.touched">
+        <div *ngIf="userName?.errors?.['required']">
+            <span>enter user name</span>
+        </div>
+        <div *ngIf="userName?.errors?.['email']">
+            <span>enter user name in email format</span>
+        </div>
+    </div>
+    <div>
+        <label for="txtPass">Password:&nbsp;</label>
+        <!-- <input type="password" id="txtPass" [formControl]="password"> -->
+        <input type="password" id="txtPass" formControlName="password">
+    </div>
+    <div *ngIf="password?.dirty||password?.touched">
+        <div *ngIf="password?.errors?.['required']">
+            enter password
+        </div>
+        <div *ngIf="password?.errors?.['passlength']">
+            password length is: {{password?.errors?.['passlength'].actual}}, whereas min is
+            {{password?.errors?.['passlength'].min}} and max is {{password?.errors?.['passlength'].max}}
+        </div>
+        <div *ngIf="password?.errors?.['upper']">
+            {{password?.errors?.['upper']}}
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Register" [disabled]="regForm.invalid">
+    </div>
+</form>

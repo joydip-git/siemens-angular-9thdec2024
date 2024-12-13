@@ -1,0 +1,95 @@
+forms in angular:
+-------------------------
+
+<input type='text' (input)="method1(...)" [value]="data1">
+<input type='text' (input)="method2(...)" [value]="data2">
+<input type='text' (input)="method3(...)" [value]="data3">
+
+data1
+data2
+data3
+
+method1(value:any){
+	this.data1 = value
+}
+method2(value:any){
+	this.data2 = value
+}
+method3(value:any){
+	this.data3 = value
+}
+
+html:
+<form>
+	<input type='text' >
+	<input type='password' >
+	<input type='number' >
+	<input type='radio' >
+	<input type='email' >
+	<input type='date' >
+	<input type='submit' >
+	
+</form>
+
+1. template-driven approach:
+	everything is controlled from the template (view) with the help of several directives: ngForm, ngModel and even validations through directives: required, email, max, min etc.
+
+module: FormsModule
+attribute directives: ngModel, ngForm
+	validators: required, min, max, email
+
+simple types: FormControl, FormGroup etc.
+
+@Directive({selector:'[ngModel]'})
+class NgModelDirective{
+}
+
+2. reactive approach:
+	everything is controlled from the code
+
+module: ReactiveFormsModule
+directives: formControl, formControlName, formGroup, formGroupName etc.
+
+<input type='text' (input)="method1(...)" [value]="data1">
+
+<form ngForm>
+	<input type='text' [(ngModel)]="data1">
+	<input type='text' [(ngModel)]="data2">
+</form>
+
+code:
+data1
+data2
+
+const model1 = new NgModelDirective()
+
+const control1 = new FormControl()
+[control1.value] = data1
+(control1.valueChanges) => data1
+
+const form = new NgFormDirective()
+const loginFrm = new FormGroup()
+loginFrm.controls => 
+{ 
+	userName: new FormControl(), 
+	password: new FormControl()
+}
+
+template-driven vs reacttive approach:
+----------------------------------------
+1. template-driven approach updates the code asynchronously, whereas reacyive approach is completely synchronous
+2. template-driven approach, formcontrol and formgorup objects are craetd behind the scene and you have no control over them. whereas in reactive approach, you control everything (creation, validation etc.) of formcontrol and formgroup from code
+3. it is easier to do unit testing of code based form handling compared to template-driven form handling
+4. since you create formcontrol and formgorup objects in code in reactive approach, you can create evena reusable code based form, which is not possible in template-driven approach
+
+best practice:
+-----------------
+use reactive approach for larger forms and template-drievn for smaller forms
+
+
+
+
+
+
+
+
