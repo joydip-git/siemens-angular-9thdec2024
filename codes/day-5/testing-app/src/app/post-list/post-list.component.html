@@ -1,0 +1,23 @@
+<ng-template #loadingTemplate>
+    <span>Loading...</span>
+</ng-template>
+
+<ng-template #errorTemplate>
+    <span>{{errorMessage}}</span>
+</ng-template>
+
+<ng-template #noRecordTemplate>
+    <span>No Records...</span>
+</ng-template>
+
+<div *ngIf="isFetchComplete;else loadingTemplate">
+    <div *ngIf="errorMessage==='';else errorTemplate">
+        <div *ngIf="todos;else noRecordTemplate ">
+            <ul>
+                <li *ngFor="let td of todos">
+                    {{td.id}} => {{td.title}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="filter-div-style">
+    <label for="txtSearch">Filter By: &nbsp;</label>
+    <input type="text" id="txtSearch" #inputFilter [value]="filterText" (input)="changeFilterText(inputFilter.value)">
+</div>

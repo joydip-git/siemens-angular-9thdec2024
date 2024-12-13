@@ -13,6 +13,7 @@ export class TodosService implements TodosContract {
 
     }
     getAll(): Observable<Todo[]> {
+        console.log('actual method called...');
         return this.http.get<Todo[]>(this.url)
     }
 }

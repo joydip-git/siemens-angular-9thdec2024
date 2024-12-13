@@ -1,0 +1,9 @@
+<div *ngIf="product">
+    <h2>
+        {{product.productName}}
+    </h2>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="goTo(product.productId)">
+        Edit
+    </button>
+</div>

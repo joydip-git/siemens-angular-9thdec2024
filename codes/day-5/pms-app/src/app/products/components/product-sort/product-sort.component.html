@@ -1,0 +1,9 @@
+<div class="sort-div-style">
+    <label for="ddlSort">Sort By: &nbsp;</label>
+    <select id="ddlSort" (change)="updateChoice(inputChoice.options[inputChoice.selectedIndex].value)" #inputChoice>
+        <option selected disabled>--select--</option>
+        <option *ngFor="let item of sortChoices">
+            {{item}}
+        </option>
+    </select>
+</div>

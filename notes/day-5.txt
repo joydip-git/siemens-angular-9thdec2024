@@ -86,6 +86,56 @@ best practice:
 -----------------
 use reactive approach for larger forms and template-drievn for smaller forms
 
+unit testing:
+---------------------
+testsuite => describe()
+test case => it()
+TestBed
+ComponentFixture
+
+
+routing
+---------------------
+http://localhost:4200/home			=> Home
+http://localhost:4200/				=> Home
+
+http://localhost:4200/products			=> ProductContainer
+http://localhost:4200/products/view/1		=> ViewProduct
+http://localhost:4200/products/update/1		=> UpdateProduct
+http://localhost:4200/products/add		=> AddProduct
+
+http://localhost:4200/<anything-else>		=> PageNotFound
+
+package: @angular/router
+
+simple types:
+-------------------
+Route => path and component
+Routes => array of Route objects (Route[])
+ActivatedRouteSnapshot
+
+register routes:
+RouterModule.forChild(array of routes)/forRoot(array of routes)
+
+forChild(array of routes)=> to register the routes of feature/sub-module. it does not create a separate router engine, rather just registers the routes with a router engine.
+Creates a module with all the router directives and a provider registering routes, without creating a new Router service. Use it when registering routes for submodules and lazy-loaded submodules.
+
+foorRoot(array of routes) => to register the routes of root module
+Creates and configures a module with all the router providers and directives. Optionally sets up an application listener to perform an initial navigation.
+When registering the routes with NgModule at the root, use it.
+
+built-in service class:
+------------------------
+Router (engine)
+ActivatedRoute
+
+built-in component directive:
+--------------------------
+<router-outlet> ....
+
+built-in attribute directive:
+--------------------------
+routerLink => let you navigate to the expected path, without RELOADING the application
 
 
 
